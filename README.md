@@ -1,4 +1,5 @@
 # SimpleSchema (simpl-schema NPM package)
+## Fork from https://github.com/aldeed/simple-schema-js
 
 [![Backers on Open Collective](https://opencollective.com/simple-schema-js/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/simple-schema-js/sponsors/badge.svg)](#sponsors) [![CircleCI](https://circleci.com/gh/aldeed/simple-schema-js/tree/master.svg?style=svg)](https://circleci.com/gh/aldeed/simple-schema-js/tree/master)
 

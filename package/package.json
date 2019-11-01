@@ -1,17 +1,17 @@
 {
   "name": "simpl-schema",
   "version": "1.5.6-1",
-  "description": "A schema validation package that supports direct validation of MongoDB update modifier objects.",
-  "author": "Eric Dobbertin <aldeed@gmail.com>",
+  "description": "A schema validation package that supports direct validation of MongoDB update modifier objects. Note: This is a fork from https://github.com/aldeed/simple-schema-js",
+  "author": "TrinhQuan <trinhquan.171093@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aldeed/node-simple-schema.git"
+    "url": "https://github.com/jarklee/simple-schema-js.git"
   },
   "bugs": {
-    "url": "https://github.com/aldeed/node-simple-schema/issues"
+    "url": "https://github.com/jarklee/simple-schema-js/issues"
   },
-  "homepage": "https://github.com/aldeed/node-simple-schema",
+  "homepage": "https://github.com/jarklee/simple-schema-js",
   "files": [
     "dist",
     "LICENSE",
