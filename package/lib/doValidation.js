@@ -2,6 +2,7 @@ import MongoObject from 'mongo-object';
 import omit from 'lodash.omit';
 import isObject from 'lodash.isobject';
 import union from 'lodash.union';
+import uniq from 'lodash.uniq';
 import includes from 'lodash.includes';
 import { SimpleSchema } from './SimpleSchema';
 import { appendAffectedKey, getParentOfKey, looksLikeModifier, isObjectWeShouldTraverse } from './utility';
@@ -323,6 +324,9 @@ function doValidation({
   });
 
   const addedFieldNames = [];
+
+  ignoreTypes = uniq([...ignoreTypes, ...SimpleSchema.defaultIgnores]);
+
   validationErrors = validationErrors.filter(errObj => {
     // Remove error types the user doesn't care about
     if (includes(ignoreTypes, errObj.type)) return false;

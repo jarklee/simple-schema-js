@@ -852,6 +852,31 @@ class SimpleSchema {
   static setDefaultMessages = (messages) => {
     extend(true, defaultMessages, messages);
   };
+
+  static defaultIgnores = [];
+
+  static addDefaultIgnore(ignores) {
+    ignores = Array.isArray(ignores) ? ignores : [ignores];
+    SimpleSchema.defaultIgnores = [...SimpleSchema.defaultIgnores, ...ignores];
+    SimpleSchema.defaultIgnores = uniq(SimpleSchema.defaultIgnores);
+  }
+
+  static removeDefaultIgnore(ignores) {
+    ignores = Array.isArray(ignores) ? ignores : [ignores];
+    for (let i = 0; i < ignores.length; i++) {
+      let ignore = ignores[i];
+      let idx = -1;
+      for (let j = 0; j < SimpleSchema.defaultIgnores.length; j++) {
+        if (SimpleSchema.defaultIgnores[j] == ignore) {
+          idx = j;
+          break;
+        }
+      }
+      if (idx !== -1) {
+        SimpleSchema.defaultIgnores.splice(idx, 1);
+      }
+    }
+  }
 }
 
 /*
