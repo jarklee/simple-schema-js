@@ -864,10 +864,10 @@ class SimpleSchema {
   static removeDefaultIgnore(ignores) {
     ignores = Array.isArray(ignores) ? ignores : [ignores];
     for (let i = 0; i < ignores.length; i++) {
-      let ignore = ignores[i];
+      const ignore = ignores[i];
       let idx = -1;
       for (let j = 0; j < SimpleSchema.defaultIgnores.length; j++) {
-        if (SimpleSchema.defaultIgnores[j] == ignore) {
+        if (SimpleSchema.defaultIgnores[j] === ignore) {
           idx = j;
           break;
         }
