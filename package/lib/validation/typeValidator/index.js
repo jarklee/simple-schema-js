@@ -1,3 +1,4 @@
+import toNumber from 'lodash.tonumber';
 import { SimpleSchema } from '../../SimpleSchema';
 import doDateChecks from './doDateChecks';
 import doNumberChecks from './doNumberChecks';
@@ -9,10 +10,14 @@ export default function typeValidator() {
 
   const def = this.definition;
   const expectedType = def.type;
-  const keyValue = this.value;
+  let keyValue = this.value;
   const op = this.operator;
 
   if (expectedType === String) return doStringChecks(def, keyValue);
+  if (expectedType === Number || expectedType === SimpleSchema.Integer) {
+    keyValue = toNumber(keyValue);
+    def.obj[this.key] = keyValue;
+  }
   if (expectedType === Number) return doNumberChecks(def, keyValue, op, false);
   if (expectedType === SimpleSchema.Integer) return doNumberChecks(def, keyValue, op, true);
 

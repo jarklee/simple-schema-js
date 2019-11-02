@@ -132,6 +132,7 @@ function doValidation({
         definition: {
           ...omit(def, 'type'),
           ...typeDef,
+          obj,
         },
       };
 
